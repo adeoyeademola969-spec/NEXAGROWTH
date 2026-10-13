@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Olive &amp; Ember Kitchen | Mediterranean restaurant</title>
+<meta name="description" content="Wood-fired Mediterranean cooking. Browse the menu and reserve a table online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F4EC; --surface:#FFFFFF; --ink:#1F2A1A; --muted:#566350; --line:#D5DBC8;
+  --accent:#4D6B2F; --accent-ink:#FFFFFF; --soft:#E2E9D3; --warn:#9A3412;
+  --head:'Young Serif',Georgia,serif; --body:'Karla','Segoe UI',Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141A12; --surface:#1D2619; --ink:#EEF2E6; --muted:#A5B39B; --line:#2E3B29; --accent:#9CC46B; --accent-ink:#141A12; --soft:#25311F; --warn:#F0A070;}}
+:root[data-theme="dark"]{
+  --bg:#141A12; --surface:#1D2619; --ink:#EEF2E6; --muted:#A5B39B; --line:#2E3B29; --accent:#9CC46B; --accent-ink:#141A12; --soft:#25311F; --warn:#F0A070;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+h1,h2,h3{font-family:var(--head);font-weight:400;line-height:1.15;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+.demo{background:var(--ink);color:var(--bg);text-align:center;font-size:.9rem;padding:.45rem 1rem}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0}
+.brand{font-family:var(--head);font-size:1.3rem;text-decoration:none}
+nav a{margin-left:1.25rem;text-decoration:none;color:var(--muted);font-weight:600}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.8rem 1.5rem;border-radius:8px;font:600 1rem var(--body);text-decoration:none;border:2px solid var(--accent);cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.hero{padding:3rem 0 3.5rem;max-width:44rem}
+.hero h1{font-size:clamp(2.3rem,6vw,4rem);letter-spacing:-.01em}
+.hero p{color:var(--muted);margin:1.2rem 0 1.6rem;max-width:34rem}
+section{padding:3.2rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:.5rem}
+.lead{color:var(--muted);margin:0 0 1.6rem;max-width:36rem}
+.tabs{display:flex;gap:.5rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.tabs button{font:600 1rem var(--body);padding:.55rem 1.1rem;border-radius:999px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.menu{list-style:none;margin:0;padding:0}
+.menu li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.menu strong{font-family:var(--head);font-weight:400;font-size:1.15rem;display:block}
+.menu span{color:var(--muted)}
+.menu .p{font-weight:600;white-space:nowrap}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.res{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+label{display:block;font-weight:600;font-size:.95rem;margin:.8rem 0 .3rem}
+input,select{width:100%;padding:.7rem .8rem;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:1rem var(--body)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.res .btn{width:100%;margin-top:1.2rem}
+.msg{margin:.9rem 0 0;font-weight:600;min-height:1.4em}
+.msg.ok{color:var(--accent)} .msg.err{color:var(--warn)}
+table{border-collapse:collapse;width:100%}
+td{padding:.5rem 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;color:var(--muted)}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
+@media (max-width:820px){.two{grid-template-columns:1fr;gap:2rem}}
+@media (max-width:520px){nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Demo website concept, designed by NexaGrowth Digital. Restaurant, menu, and prices are sample content.</div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">Olive &amp; Ember</a>
+    <nav aria-label="Main"><a href="#menu">Menu</a><a href="#reserve">Reserve</a><a href="#visit">Visit</a></nav>
+  </header>
+  <main>
+    <div class="hero">
+      <h1>Wood-fired cooking, shared at one long table.</h1>
+      <p>Seasonal Mediterranean dishes cooked over olive wood. Look at tonight's menu, then reserve your table in under a minute.</p>
+      <a class="btn" href="#reserve">Reserve a table</a> <a class="btn alt" href="#menu">See the menu</a>
+    </div>
+
+    <section id="menu">
+      <h2>The menu</h2>
+      <p class="lead">Dishes change with the season. Ask us about vegetarian, vegan, and allergen options.</p>
+      <div class="tabs" role="tablist" aria-label="Menu sections">
+        <button role="tab" aria-selected="true" data-t="s">Starters</button>
+        <button role="tab" aria-selected="false" data-t="m">Mains</button>
+        <button role="tab" aria-selected="false" data-t="d">Desserts</button>
+      </div>
+      <ul class="menu" id="list"></ul>
+    </section>
+
+    <section id="reserve">
+      <div class="two">
+        <div>
+          <h2>Reserve a table</h2>
+          <p class="lead">Tell us when you'd like to come. We confirm every booking by email or phone.</p>
+          <p style="color:var(--muted)">Groups of 8 or more: please call us so we can set up the long table.</p>
+        </div>
+        <div class="res">
+          <form id="f" novalidate>
+            <label for="n">Name</label><input id="n" autocomplete="name">
+            <label for="e">Email or phone</label><input id="e" autocomplete="email">
+            <div class="row">
+              <div><label for="dt">Date</label><input id="dt" type="date"></div>
+              <div><label for="tm">Time</label><select id="tm"><option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option></select></div>
+            </div>
+            <label for="g">Guests</label>
+            <select id="g"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select>
+            <button class="btn" type="submit">Request reservation</button>
+            <p class="msg" id="m" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="two">
+        <div>
+          <h2>Find us</h2>
+          <p class="lead" style="margin-bottom:.8rem">7 Harbour Lane, [City]<br>Phone: [phone number]<br>Email: hello@oliveember.example</p>
+          <p style="color:var(--muted)">Step-free entrance. Dogs welcome on the terrace.</p>
+        </div>
+        <div>
+          <h2>Opening hours</h2>
+          <table aria-label="Opening hours" style="margin-top:1rem">
+            <tr><td>Tuesday to Thursday</td><td>17:30 to 22:00</td></tr>
+            <tr><td>Friday and Saturday</td><td>17:30 to 23:00</td></tr>
+            <tr><td>Sunday lunch</td><td>12:00 to 16:00</td></tr>
+            <tr><td>Monday</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>We use the details you send only to confirm your booking and don't share them.</p>
+    <p>&copy; 2026 Olive &amp; Ember Kitchen (demo). Website designed by NexaGrowth Digital.</p>
+  </footer>
+</div>
+<script>
+var M={
+ s:[["Charred flatbread","Whipped feta, thyme, olive oil","7"],["Grilled halloumi","Honey, chilli, lemon","9"],["Smoked aubergine","Tahini, pomegranate, mint","8"],["Prawns in garlic","Butter, parsley, grilled bread","12"]],
+ m:[["Whole wood-fired sea bream","Fennel, lemon, herb salad","26"],["Lamb shoulder for two","Slow cooked, roasted potatoes, salsa verde","48"],["Mushroom and barley stew","Smoked paprika, crispy shallots (vegan)","18"],["Chicken under a brick","Harissa, charred greens, yoghurt","22"]],
+ d:[["Orange blossom panna cotta","Pistachio, candied zest","8"],["Olive oil cake","Citrus, whipped mascarpone","8"],["Baklava ice cream","Honey, toasted walnuts","7"]]
+};
+var list=document.getElementById('list');
+function show(k){
+  list.innerHTML='';
+  M[k].forEach(function(r){
+    var li=document.createElement('li'),d=document.createElement('div'),s=document.createElement('strong'),p=document.createElement('span'),pr=document.createElement('span');
+    s.textContent=r[0];p.textContent=r[1];pr.className='p';pr.textContent='€'+r[2];
+    d.appendChild(s);d.appendChild(p);li.appendChild(d);li.appendChild(pr);list.appendChild(li);
+  });
+}
+document.querySelectorAll('.tabs button').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute('aria-selected','false')});
+    b.setAttribute('aria-selected','true');show(b.dataset.t);
+  });
+});
+show('s');
+document.getElementById('dt').min=new Date().toISOString().slice(0,10);
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var m=document.getElementById('m'),n=document.getElementById('n').value.trim(),e=document.getElementById('e').value.trim(),d=document.getElementById('dt').value;
+  if(!n||!e||!d){m.className='msg err';m.textContent='Please add your name, a contact, and a date.';return;}
+  m.className='msg ok';
+  m.textContent='Thanks, '+n.split(' ')[0]+'. This is a demo, so nothing was sent. A live site would confirm your table by email.';
+  this.reset();
+});
+</script>
+</body>
+</html>

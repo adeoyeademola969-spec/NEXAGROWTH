@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bright Smile Dental | Gentle family dentistry</title>
+<meta name="description" content="Gentle, modern dental care for the whole family. Request an appointment online in under a minute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F8F7; --surface:#FFFFFF; --ink:#12343B; --muted:#4F6A70; --line:#D4E3E1;
+  --accent:#0F6B73; --accent-ink:#FFFFFF; --soft:#DDEFEC; --warn:#B4442F;
+  --head:'Outfit','Trebuchet MS',sans-serif; --body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0B1B1F; --surface:#112A30; --ink:#E6F2F1; --muted:#9BB6B8; --line:#21424A; --accent:#4FC1C8; --accent-ink:#0B1B1F; --soft:#173840; --warn:#F08A74;}}
+:root[data-theme="dark"]{
+  --bg:#0B1B1F; --surface:#112A30; --ink:#E6F2F1; --muted:#9BB6B8; --line:#21424A; --accent:#4FC1C8; --accent-ink:#0B1B1F; --soft:#173840; --warn:#F08A74;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0;font-weight:600}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+.demo{background:var(--ink);color:var(--bg);text-align:center;font-size:.9rem;padding:.45rem 1rem}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
+.brand{font-family:var(--head);font-weight:600;font-size:1.25rem;text-decoration:none}
+nav a{margin-left:1.25rem;text-decoration:none;color:var(--muted);font-weight:600}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.8rem 1.5rem;border-radius:10px;font:600 1rem var(--body);text-decoration:none;border:2px solid var(--accent);cursor:pointer}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:hover{filter:brightness(1.08)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:start;padding:2.5rem 0 4rem}
+.hero h1{font-size:clamp(2.1rem,5vw,3.3rem);letter-spacing:-.015em}
+.hero p.sub{color:var(--muted);max-width:33rem;margin:1.1rem 0 1.5rem}
+.facts{display:flex;gap:1.5rem;flex-wrap:wrap;color:var(--muted);font-size:.98rem;margin-top:1.75rem}
+.facts b{color:var(--ink)}
+.book{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.5rem;box-shadow:0 22px 44px -28px rgba(18,52,59,.5)}
+.book h2{font-size:1.3rem;margin-bottom:.25rem}
+.book .hint{color:var(--muted);font-size:.95rem;margin:0 0 1rem}
+label{display:block;font-weight:600;font-size:.95rem;margin:.8rem 0 .3rem}
+input,select{width:100%;padding:.7rem .8rem;border:1.5px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font:1rem var(--body)}
+.check{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--muted);margin:1rem 0}
+.check input{width:auto;margin-top:.3rem}
+.book .btn{width:100%}
+.msg{margin:.9rem 0 0;font-weight:600;min-height:1.4em}
+.msg.ok{color:var(--accent)} .msg.err{color:var(--warn)}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.5rem,3.2vw,2rem);margin-bottom:.5rem}
+.lead{color:var(--muted);max-width:38rem;margin:0 0 2rem}
+.services{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 3rem}
+.services li{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.services strong{display:block;font-family:var(--head);font-size:1.12rem}
+.services span{color:var(--muted)}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.person{display:flex;gap:1rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem}
+.av{flex:none;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font:600 1.1rem var(--head)}
+.person p{margin:.1rem 0;color:var(--muted);font-size:.97rem}
+.person strong{font-family:var(--head)}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.reviews blockquote{margin:0;background:var(--soft);border-radius:14px;padding:1.3rem}
+.reviews cite{display:block;margin-top:.6rem;color:var(--muted);font-style:normal;font-size:.95rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+table{border-collapse:collapse;width:100%}
+td{padding:.5rem 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:1rem 0}
+summary{cursor:pointer;font-weight:600;font-family:var(--head)}
+details p{color:var(--muted);margin:.6rem 0 0}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.93rem;border-top:1px solid var(--line)}
+@media (max-width:820px){
+  .hero,.two{grid-template-columns:1fr;gap:2rem}
+  .services,.team,.reviews{grid-template-columns:1fr}
+  .services{gap:0}
+}
+@media (max-width:520px){nav{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Demo website concept, designed by NexaGrowth Digital. Clinic, team, and reviews are sample content.</div>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#">Bright Smile Dental</a>
+    <nav aria-label="Main"><a href="#services">Treatments</a><a href="#team">Our team</a><a href="#visit">Visit us</a><a href="#faq">Questions</a></nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Dental care that feels calm, clear, and gentle.</h1>
+        <p class="sub">Check-ups, cleaning, whitening, and treatment for the whole family. Tell us what you need and we'll reply within one working day with a time that suits you.</p>
+        <div class="actions"><a class="btn" href="#book">Request an appointment</a> <a class="btn alt" href="#services">See treatments</a></div>
+        <div class="facts"><span><b>Same-week</b> check-ups</span><span><b>Clear prices</b> before treatment</span><span><b>Children</b> welcome</span></div>
+      </div>
+
+      <div class="book" id="book">
+        <h2>Request an appointment</h2>
+        <p class="hint">Takes under a minute. No payment needed.</p>
+        <form id="f" novalidate>
+          <label for="n">Full name</label>
+          <input id="n" name="name" autocomplete="name" required>
+          <label for="e">Email or phone</label>
+          <input id="e" name="contact" autocomplete="email" required>
+          <label for="t">Treatment</label>
+          <select id="t" name="treatment">
+            <option>Check-up and cleaning</option>
+            <option>Tooth pain or emergency</option>
+            <option>Teeth whitening</option>
+            <option>Fillings and repairs</option>
+            <option>Braces and aligners</option>
+            <option>Children's dentistry</option>
+          </select>
+          <label for="d">Preferred day</label>
+          <select id="d" name="day"><option>Any weekday</option><option>Monday to Wednesday</option><option>Thursday and Friday</option><option>Saturday morning</option></select>
+          <div class="check"><input type="checkbox" id="c"><label for="c" style="margin:0;font-weight:400">I agree that Bright Smile Dental may use my details only to reply to this request. See our privacy note below.</label></div>
+          <button class="btn" type="submit">Send request</button>
+          <p class="msg" id="m" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+
+    <section id="services">
+      <h2>Treatments</h2>
+      <p class="lead">Everything is explained in plain language, and you'll see the price before we begin.</p>
+      <ul class="services">
+        <li><strong>Check-ups and cleaning</strong><span>A full exam, professional clean, and a clear plan for your next visit.</span></li>
+        <li><strong>Teeth whitening</strong><span>Safe, supervised whitening for a brighter smile.</span></li>
+        <li><strong>Fillings and repairs</strong><span>Natural-looking materials that match your teeth.</span></li>
+        <li><strong>Braces and aligners</strong><span>Straighter teeth for teenagers and adults, with options for every budget.</span></li>
+        <li><strong>Children's dentistry</strong><span>Short, friendly visits that help children feel at ease.</span></li>
+        <li><strong>Urgent care</strong><span>Tooth pain or a broken tooth? We keep slots free for urgent cases.</span></li>
+      </ul>
+    </section>
+
+    <section id="team">
+      <h2>Meet the team</h2>
+      <p class="lead">Sample team profiles. Replace with the real clinic's staff.</p>
+      <div class="team">
+        <div class="person"><div class="av">AM</div><div><strong>Dr. Anna Meyer</strong><p>Lead dentist. Family and preventive care.</p></div></div>
+        <div class="person"><div class="av">JV</div><div><strong>Dr. Jonas Visser</strong><p>Cosmetic dentistry and aligners.</p></div></div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <h2>What patients say</h2>
+      <p class="lead">Sample reviews for this demo. Replace with real patient feedback.</p>
+      <div class="reviews">
+        <blockquote>"I was nervous, but everything was explained before they touched anything."<cite>Sample patient</cite></blockquote>
+        <blockquote>"Booked online in the morning and was seen two days later."<cite>Sample patient</cite></blockquote>
+        <blockquote>"My daughter actually asks when we're going back."<cite>Sample patient</cite></blockquote>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="two">
+        <div>
+          <h2>Visit us</h2>
+          <p class="lead" style="margin-bottom:1rem">12 Linden Street, [City]<br>Phone: [phone number]<br>Email: hello@brightsmile.example</p>
+          <p style="color:var(--muted)">Step-free entrance. Bicycle parking and a tram stop two minutes away.</p>
+        </div>
+        <div>
+          <h2>Opening hours</h2>
+          <table aria-label="Opening hours" style="margin-top:1rem">
+            <tr><td>Monday to Thursday</td><td>08:00 to 18:00</td></tr>
+            <tr><td>Friday</td><td>08:00 to 16:00</td></tr>
+            <tr><td>Saturday</td><td>09:00 to 13:00</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>Common questions</h2>
+      <details><summary>Do I need a referral?</summary><p>No. You can book directly with us.</p></details>
+      <details><summary>What if I have tooth pain today?</summary><p>Call us first thing in the morning. We keep a few urgent slots each day.</p></details>
+      <details><summary>Will I know the cost before treatment?</summary><p>Yes. We give you a written estimate and wait for your agreement before we start.</p></details>
+      <details><summary>Do you treat children?</summary><p>Yes. Children are welcome from their first tooth, and we keep visits short and friendly.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Privacy note:</strong> We use the details you send only to reply to your request, we don't share them, and we delete them when they are no longer needed. You can ask us to remove your details at any time.</p>
+    <p>&copy; 2026 Bright Smile Dental (demo). Website designed by NexaGrowth Digital.</p>
+  </footer>
+</div>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var m=document.getElementById('m'), n=document.getElementById('n').value.trim(),
+      e=document.getElementById('e').value.trim(), c=document.getElementById('c').checked;
+  m.className='msg';
+  if(!n||!e){m.className='msg err';m.textContent='Please add your name and an email or phone number.';return;}
+  if(!c){m.className='msg err';m.textContent='Please tick the box so we can reply to you.';return;}
+  m.className='msg ok';
+  m.textContent='Thank you, '+n.split(' ')[0]+'. This is a demo, so nothing was sent. On a live site we would reply within one working day.';
+  this.reset();
+});
+</script>
+</body>
+</html>
